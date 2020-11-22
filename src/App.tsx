@@ -53,7 +53,6 @@ function App() {
         ball.y < rocket.y + 60 &&
         ball.y > rocket.y - 60
       ) {
-        _stopGame();
         setOpen(true);
       }
     }
@@ -64,14 +63,6 @@ function App() {
       _updateFrame();
       _startGame();
     }, 50);
-  };
-
-  const _stopGame = () => {
-    setState({ score: 0, balls: [] });
-    if (timeout) {
-      clearTimeout(timeout);
-    }
-    timeout = null;
   };
 
   const _onUp = () => {
